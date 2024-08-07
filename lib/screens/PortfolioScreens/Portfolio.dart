@@ -795,18 +795,46 @@ class _PortfolioState extends State<Portfolio> with TickerProviderStateMixin{
                alignment: Alignment.bottomRight,
                child: Padding(
                  padding: EdgeInsets.only(right: 25,bottom: 15),
-                 child:  MouseRegion(
-                   onEnter: (v){provider.updatePortfolioLearnMoreList(index);},
-                   onExit: (v){provider.resetPortfolioLearnMoreList();},
-                   child: Container(
-                     width: 150,
-                     height: 45,
-                     decoration: BoxDecoration(
-                         color: seaGreen,
-                         border: Border(top: BorderSide(color: textColor,width: 2),bottom:  BorderSide(color: textColor,width:  provider.portfolioLearnMoreList[index]?7:4),left:  BorderSide(color: textColor,width: 2),right: BorderSide(color: textColor,width: provider.portfolioLearnMoreList[index]?7:4),)
-                     ),
-                     child: Center(
-                         child:textRoboto('LEARN MORE', textColor, w500, size20)
+                 child:  InkWell(
+                   onTap:
+                       index == 0?
+                       ()async{
+                     try{
+                       await launchUrl(Uri.parse('https://github.com/ZakriyaMateen/Asaan-Makaan'));
+                     }
+                     catch(e){
+                       print(e.toString());
+                     }
+                   }:  index == 1?
+                       ()async{
+                     try{
+                       await launchUrl(Uri.parse("https://github.com/ZakriyaMateen/URL2GoWeb"));
+                     }
+                     catch(e){
+                       print(e.toString());
+                     }
+                   }:  index == 2?
+                       ()async{
+                     try{
+                       await launchUrl(Uri.parse('https://github.com/ZakriyaMateen/anonymouschat'));
+                     }
+                     catch(e){
+                       print(e.toString());
+                     }
+                   }:null,
+                   child: MouseRegion(
+                     onEnter: (v){provider.updatePortfolioLearnMoreList(index);},
+                     onExit: (v){provider.resetPortfolioLearnMoreList();},
+                     child: Container(
+                       width: 150,
+                       height: 45,
+                       decoration: BoxDecoration(
+                           color: seaGreen,
+                           border: Border(top: BorderSide(color: textColor,width: 2),bottom:  BorderSide(color: textColor,width:  provider.portfolioLearnMoreList[index]?7:4),left:  BorderSide(color: textColor,width: 2),right: BorderSide(color: textColor,width: provider.portfolioLearnMoreList[index]?7:4),)
+                       ),
+                       child: Center(
+                           child:textRoboto('LEARN MORE', textColor, w500, size20)
+                       ),
                      ),
                    ),
                  ),
