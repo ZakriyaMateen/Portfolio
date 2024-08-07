@@ -1,4 +1,4 @@
 # portfolio
 
-Porfolio Web Application code in Flutter with Firebase.
+Porfolio Web Application coded in Flutter with Firebase.
 
