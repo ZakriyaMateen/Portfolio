@@ -1,0 +1,1 @@
+ build/web/index.html build/web/index.html.save:  /home/zakriya/AndroidStudioProjects/portfolio/web/index.html /home/zakriya/AndroidStudioProjects/portfolio/web/index.html.save
